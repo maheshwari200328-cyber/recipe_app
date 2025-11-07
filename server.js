@@ -3,9 +3,12 @@ const app = express();
 //const cors=require('cors');
 const mongodb = require('mongodb')
 const mongoClient = mongodb.MongoClient;
-const URL = "mongodb://localhost:27017";
+const URL = process.env.DB
 const DB_NAME = "recipe_app"
 const ObjectId = mongodb.ObjectId
+const dotEnv=require('dotenv').config()
+
+
 app.use(express.json());
 
 
