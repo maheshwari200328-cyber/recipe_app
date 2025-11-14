@@ -10,13 +10,15 @@ mongoose.connect(process.env.DB,{
   useUnifiedTopology:true
 })
 
+
 .then(()=>console.log("MongoDB Connected"))
 .catch(err=>console.log(err));
+const PORT = process.env.PORT || 5500;
 
 app.use(express.json());
 app.use("/api/recipes",routes);
-app.listen(5500, () => {
-    console.log("server is running on port 5500")
+app.listen(PORT, () => {
+    console.log("server is running on port "+PORT)
 })  
 
 
